@@ -1,4 +1,3 @@
-// /src/app/pages/blog/posts.[slug].page.ts
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
@@ -15,11 +14,11 @@ export interface PostAttributes {
   standalone: true,
   imports: [MarkdownComponent, AsyncPipe, NgIf, RouterLink],
   template: `
-    <ng-container *ngIf="post$ | async as post">
+    <ng-container *ngIf="content$ | async as content">
       <article
         class="flex flex-col prose prose-slate  dark:prose-invert md:max-w-4xl py-16 w-full px-4"
       >
-        <a routerLink="/blog" class="btn items-center mb-8 w-64 flex flex-row"
+        <a routerLink="/errors" class="btn items-center mb-8 w-64 flex flex-row"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -34,13 +33,13 @@ export interface PostAttributes {
               d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
             />
           </svg>
-          <span>Back to Blog Posts</span></a
+          <span>Back to Errors List</span></a
         >
         <analog-markdown
           class="markdown"
-          [content]="post.content"
+          [content]="content.content"
         ></analog-markdown>
-        <a routerLink="/blog" class="btn items-center mb-8 w-64 flex flex-row"
+        <a routerLink="/errors" class="btn items-center mb-8 w-64 flex flex-row"
           ><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -55,7 +54,7 @@ export interface PostAttributes {
               d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3"
             />
           </svg>
-          <span>Back to Blog Posts</span></a
+          <span>Back to Errors List</span></a
         >
       </article>
     </ng-container>
@@ -65,13 +64,19 @@ export interface PostAttributes {
       :host {
         display: flex;
         justify-content: center;
+        flex: 1;
+        width: 100%;
       }
     `,
   ],
 })
 export default class BlogPostComponent {
-  readonly post$ = injectContent<PostAttributes>({
+  readonly content$ = injectContent<PostAttributes>({
     param: 'slug',
-    subdirectory: 'blog',
+    subdirectory: 'errors',
   });
+
+  ngOnInit() {
+    this.content$.subscribe((content) => console.log(content));
+  }
 }

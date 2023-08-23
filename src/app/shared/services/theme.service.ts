@@ -7,4 +7,5 @@ export const THEMES = ['light', 'dark', 'cupcake'];
 })
 export class ThemeService {
   selectedTheme = signal('light');
+  isNavOpen = signal(true);
 }

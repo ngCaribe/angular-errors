@@ -1,0 +1,9 @@
+<aside class="w-80 bg-base-100 h-full pt-8">
+  <ul class="menu menu-sm lg:menu-md px-4 space-y-2">
+    <li *ngFor="let link of links">
+      <a [routerLink]="link.path" routerLinkActive="underline">{{
+        link.label
+      }}</a>
+    </li>
+  </ul>
+</aside>

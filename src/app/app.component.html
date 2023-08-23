@@ -3,6 +3,13 @@
   class="min-h-screen bg-base-100 flex justify-between flex-col"
 >
   <app-navigation />
-  <router-outlet />
+  <section class="flex flex-1">
+    <app-sidebar
+      [ngClass]="{ hidden: !isNavOpen() }"
+      class="ease-in-out md:visible"
+    />
+    <router-outlet />
+  </section>
+
   <app-footer />
 </div>

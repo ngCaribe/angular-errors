@@ -15,14 +15,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       prerender: {
-        routes: [
-          '/blog',
-          '/blog/build-analog-blog',
-          '/blog/git-tutorial',
-          '/blog/view-transition-api',
-          '/about',
-          '/contact',
-        ],
+        routes: ['/', '/errors', '/errors/6002', 'errors-overview'],
       },
     }),
   ],

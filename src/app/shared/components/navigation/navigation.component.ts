@@ -11,20 +11,16 @@ import { THEMES, ThemeService } from '../../services/theme.service';
   styles: [],
 })
 export class NavigationComponent {
-  links = [
-    { path: '/about', label: 'About' },
-    { path: '/contact', label: 'Contact' },
-    {
-      path: '/blog',
-      label: 'Blog',
-    },
-  ];
-
   themeService = inject(ThemeService);
   selectedTheme = this.themeService.selectedTheme;
+  isNavOpen = this.themeService.isNavOpen;
   themes = THEMES;
 
   onThemeChange(event: any) {
     this.themeService.selectedTheme.set(event?.target.value);
+  }
+
+  toggleNav() {
+    this.themeService.isNavOpen.set(!this.isNavOpen());
   }
 }
