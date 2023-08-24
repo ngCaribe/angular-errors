@@ -1,52 +1,36 @@
-<div class="navbar bg-base-100 text-lg">
-  <div class="navbar-start md:pl-4">
-    <button type="button" (click)="toggleNav()">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke-width="1.5"
-        stroke="currentColor"
-        class="w-6 h-6"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-        />
-      </svg>
-    </button>
-  </div>
+<nav class="bg-base-100 flex justify-between md:hidden h-16 border-b-2">
+  <a class="flex items-center pl-4" routerLink="/" routerLinkActive="active">
+    <img
+      *ngIf="selectedTheme() !== 'dark'; else lightThemeIcon"
+      class="w-12 pr-2"
+      src="/angular_solidBlack.svg"
+      alt="Angular Logo"
+    />
 
-  <div class="navbar-center flex font-bold">
-    <a class="flex items-center" routerLink="/" routerLinkActive="active">
-      <img
-        *ngIf="selectedTheme() !== 'dark'; else lightThemeIcon"
-        class="w-12 pr-2"
-        src="/angular_solidBlack.svg"
-        alt="Angular Logo"
-      />
+    <ng-template #lightThemeIcon>
+      <img class="w-12 pr-2" src="/angular.svg" alt="Angular Logo" />
+    </ng-template>
 
-      <ng-template #lightThemeIcon>
-        <img class="w-12 pr-2" src="/angular.svg" alt="Angular Logo" />
-      </ng-template>
+    <span> NG-0000 </span>
+  </a>
 
-      <span> NG-0000 </span>
-    </a>
-  </div>
-  <div class="navbar-end">
-    <select
-      id="themeSelector"
-      class="select select-bordered select-sm w-16"
-      (input)="onThemeChange($event)"
+  <button
+    class="p-4 focus:outline-none focus:bg-gray-700"
+    (click)="toggleNav()"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="1.5"
+      stroke="currentColor"
+      class="w-6 h-6"
     >
-      <option
-        *ngFor="let theme of themes"
-        [value]="theme"
-        [selected]="theme === selectedTheme()"
-      >
-        {{ theme === "light" ? "☀️" : theme === "dark" ? "🌙" : "🧁" }}
-      </option>
-    </select>
-  </div>
-</div>
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+      />
+    </svg>
+  </button>
+</nav>

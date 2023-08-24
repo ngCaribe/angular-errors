@@ -7,10 +7,10 @@ export interface PostAttributes {
   title: string;
   slug: string;
   description: string;
-  coverImage: string;
 }
 
 @Component({
+  selector: 'app-error',
   standalone: true,
   imports: [MarkdownComponent, AsyncPipe, NgIf, RouterLink],
   template: `
@@ -70,13 +70,9 @@ export interface PostAttributes {
     `,
   ],
 })
-export default class BlogPostComponent {
+export default class ErrorComponent {
   readonly content$ = injectContent<PostAttributes>({
     param: 'slug',
     subdirectory: 'errors',
   });
-
-  ngOnInit() {
-    this.content$.subscribe((content) => console.log(content));
-  }
 }

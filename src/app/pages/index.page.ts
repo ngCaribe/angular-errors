@@ -5,8 +5,8 @@ import { RouterLink } from '@angular/router';
   selector: 'app-home',
   standalone: true,
   template: `
-    <div class="flex items-center gap-16 flex-col pl-16">
-      <h1 class="md:text-4xl text-2xl font-bold">Angular Errors</h1>
+    <div class="flex pl-16 pt-16">
+      <h1 class="md:text-5xl text-3xl font-bold">Angular Errors</h1>
     </div>
   `,
   styles: [

@@ -26,6 +26,7 @@ import { RouterLink } from '@angular/router';
         display: flex;
         justify-content: center;
         flex: 1;
+        align-items: center;
         width: 100%;
       }
     `,

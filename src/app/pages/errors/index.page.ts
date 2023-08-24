@@ -11,10 +11,11 @@ export interface PostAttributes {
 }
 
 @Component({
+  selector: 'app-errors-list',
   standalone: true,
   imports: [RouterOutlet, RouterLink, NgFor],
   template: `
-    <div class="bg-base-100 flex flex-col w-full md:px-8  py-4 px-2">
+    <div class="bg-base-100 flex flex-col w-full md:pl-16 md:pt-16 px-4 pt-4">
       <h1 class="font-bold md:text-5xl text-3xl pb-8">Errors</h1>
 
       <section class="flex flex-wrap gap-8">
@@ -50,7 +51,7 @@ export interface PostAttributes {
     `,
   ],
 })
-export default class BlogComponent {
+export default class ErrorsListComponent {
   readonly content: any = injectContentFiles<PostAttributes>((contentFile) =>
     contentFile.filename.includes('/src/content/errors/')
   );

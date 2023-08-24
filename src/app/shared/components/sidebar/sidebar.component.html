@@ -1,4 +1,22 @@
-<aside class="w-80 bg-base-100 h-full pt-8">
+<aside class="bg-base-100 flex flex-col px-4">
+  <a
+    class="flex items-center h-16 border-b-2"
+    routerLink="/"
+    routerLinkActive="active"
+  >
+    <img
+      *ngIf="selectedTheme() !== 'dark'; else lightThemeIcon"
+      class="w-12 pr-2"
+      src="/angular_solidBlack.svg"
+      alt="Angular Logo"
+    />
+
+    <ng-template #lightThemeIcon>
+      <img class="w-12 pr-2" src="/angular.svg" alt="Angular Logo" />
+    </ng-template>
+
+    <span> NG-0000 </span>
+  </a>
   <ul class="menu menu-sm lg:menu-md px-4 space-y-2">
     <li *ngFor="let link of links">
       <a [routerLink]="link.path" routerLinkActive="underline">{{
