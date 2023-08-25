@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
-import { THEMES, ThemeService } from '../../services/theme.service';
+import {
+  THEMES,
+  GlobalSettingsService,
+} from '../../services/global-settings.service';
 
 @Component({
   selector: 'app-navigation',
@@ -11,7 +14,7 @@ import { THEMES, ThemeService } from '../../services/theme.service';
   styles: [],
 })
 export class NavigationComponent {
-  themeService = inject(ThemeService);
+  themeService = inject(GlobalSettingsService);
   selectedTheme = this.themeService.selectedTheme;
   isNavOpen = this.themeService.isNavOpen;
   themes = THEMES;

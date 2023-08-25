@@ -4,7 +4,7 @@ export const THEMES = ['light', 'dark', 'cupcake'];
 @Injectable({
   providedIn: 'root',
 })
-export class ThemeService {
+export class GlobalSettingsService {
   selectedTheme = signal('light');
   isNavOpen = signal(true);
 }
