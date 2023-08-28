@@ -10,9 +10,9 @@ import { RouterLink } from '@angular/router';
   template: `
     <ng-container *ngIf="content$ | async as content">
       <article
-        class="flex flex-col prose prose-slate  dark:prose-invert md:max-w-4xl py-16 w-full px-4"
+        class="flex flex-col prose prose-slate  dark:prose-invert w-full md:max-w-4xl  md:pl-16 md:pt-16 px-4 pt-4"
       >
-        <h1 class="font-bold md:text-5xl text-3xl py-8">Errors Overview</h1>
+        <h1 class="font-bold md:text-4xl text-2xl">Errors Overview</h1>
         <analog-markdown
           class="markdown"
           [content]="content.content"

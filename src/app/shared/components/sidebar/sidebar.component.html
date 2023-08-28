@@ -1,4 +1,4 @@
-<aside class="bg-base-100 flex flex-col px-4">
+<aside class="bg-base-100 flex flex-col px-4 w-80">
   <a
     class="flex items-center h-16 border-b-2"
     routerLink="/"
@@ -19,9 +19,23 @@
   </a>
   <ul class="menu menu-sm lg:menu-md px-4 space-y-2">
     <li *ngFor="let link of links">
-      <a [routerLink]="link.path" routerLinkActive="underline">{{
-        link.label
-      }}</a>
+      <ng-container *ngIf="link.subitems; else singleItemTpl">
+        <details open>
+          <summary>{{ link.label }}</summary>
+          <ul>
+            <li *ngFor="let subitem of link.subitems">
+              <a [routerLink]="subitem.path" routerLinkActive="underline">{{
+                subitem.label
+              }}</a>
+            </li>
+          </ul>
+        </details>
+      </ng-container>
+      <ng-template #singleItemTpl>
+        <a [routerLink]="link.path" routerLinkActive="underline">{{
+          link.label
+        }}</a>
+      </ng-template>
     </li>
   </ul>
 </aside>
