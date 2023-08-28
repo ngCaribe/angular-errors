@@ -11,6 +11,8 @@ meta:
     content: Errors Overview Description from meta
   - property: og:url
     content: https://errors.angular.io/NG0100
+  - property: twitter:card
+    content: summary
   - property: twitter:title
     content: "errors overview  for twitter"
   - property: twitter:description
