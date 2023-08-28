@@ -1,9 +1,10 @@
 import { injectContent, MarkdownComponent } from '@analogjs/content';
 import { RouteMeta } from '@analogjs/router';
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component, Injectable } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { title2Resolver } from '../shared/resolvers/title.resolver';
+import { metatagsResolver } from '../shared/resolvers/metatags.resolver';
 
 export interface PostAttributes {
   title: string;
@@ -13,6 +14,7 @@ export interface PostAttributes {
 
 export const routeMeta: RouteMeta = {
   title: title2Resolver,
+  meta: metatagsResolver,
 };
 
 @Component({

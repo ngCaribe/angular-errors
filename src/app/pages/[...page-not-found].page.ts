@@ -43,25 +43,24 @@ export const routeMeta: RouteMeta = {
           <div
             class="flex items-center w-full mt-6 gap-4 shrink-0 sm:w-auto flex-wrap justify-center"
           >
-            <button class="btn btn-primary ">
-              <a routerLink="/">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="1.5"
-                  stroke="currentColor"
-                  class="w-6 h-6"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
-                  />
-                </svg>
-              </a>
-            </button>
-            <button class="btn btn-neutral">
+            <a btn btn-primary routerLink="/">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="w-6 h-6"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"
+                />
+              </svg>
+            </a>
+
+            <a routerLink="/errors" class="btn btn-neutral">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -76,9 +75,8 @@ export const routeMeta: RouteMeta = {
                   d="M6.75 15.75L3 12m0 0l3.75-3.75M3 12h18"
                 />
               </svg>
-
-              <a routerLink="/errors">Go to Errors Page</a>
-            </button>
+              Errors list
+            </a>
           </div>
         </div>
       </div>
