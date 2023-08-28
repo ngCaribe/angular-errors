@@ -2,7 +2,26 @@
 title: Errors Overview
 slug: errors-overview
 description: Errors Overview for Angular Developers
+meta:
+  - name: title
+    content: Errors Overview Title from meta
+  - property: og:title
+    content: About
+  - property: og:description
+    content: Errors Overview Description from meta
+  - property: og:url
+    content: https://errors.angular.io/NG0100
+  - property: twitter:title
+    content: "errors overview  for twitter"
+  - property: twitter:description
+    content: Error NG0100 Unreachable Code Detected
+  - property: twitter:image
+    content: "/errors-overview.png"
+  - property: og:image
+    content: "/errors-overview.png"
 ---
+
+<div class="prose">
 
 ## API Report File for "angular-srcs"
 
@@ -102,3 +121,5 @@ export enum ErrorCode {
 
 // (No @packageDocumentation comment for this package)
 ```
+
+</div>
