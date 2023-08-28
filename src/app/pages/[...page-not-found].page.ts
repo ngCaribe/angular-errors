@@ -1,6 +1,10 @@
+import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
+export const routeMeta: RouteMeta = {
+  title: '404',
+};
 @Component({
   standalone: true,
   imports: [RouterLink],

@@ -1,7 +1,12 @@
 import { MarkdownComponent, injectContent } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
+export const routeMeta: RouteMeta = {
+  title: 'Errors Overview',
+};
 
 @Component({
   selector: 'app-errors-overview',

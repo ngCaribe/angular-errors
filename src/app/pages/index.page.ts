@@ -1,5 +1,10 @@
+import { RouteMeta } from '@analogjs/router';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+
+export const routeMeta: RouteMeta = {
+  title: 'Angular Errors',
+};
 
 @Component({
   selector: 'app-home',

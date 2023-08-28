@@ -1,13 +1,19 @@
 import { injectContent, MarkdownComponent } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { AsyncPipe, NgIf } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, Injectable } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { title2Resolver } from '../shared/resolvers/title.resolver';
 
 export interface PostAttributes {
   title: string;
   slug: string;
   description: string;
 }
+
+export const routeMeta: RouteMeta = {
+  title: title2Resolver,
+};
 
 @Component({
   selector: 'app-error',
