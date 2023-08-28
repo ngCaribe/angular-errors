@@ -17,7 +17,7 @@ meta:
     content: "errors overview  for twitter"
   - property: twitter:description
     content: Error NG0100 Unreachable Code Detected
-  - property: twitter:image
+  - name: twitter:image
     content: "/errors-overview.png"
   - property: og:image
     content: "/errors-overview.png"
