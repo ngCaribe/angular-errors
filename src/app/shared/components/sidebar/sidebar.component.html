@@ -24,17 +24,23 @@
           <summary>{{ link.label }}</summary>
           <ul>
             <li *ngFor="let subitem of link.subitems">
-              <a [routerLink]="subitem.path" routerLinkActive="underline">{{
-                subitem.label
-              }}</a>
+              <a
+                [routerLink]="subitem.path"
+                routerLinkActive="underline"
+                (click)="toggleSidebar()"
+                >{{ subitem.label }}</a
+              >
             </li>
           </ul>
         </details>
       </ng-container>
       <ng-template #singleItemTpl>
-        <a [routerLink]="link.path" routerLinkActive="underline">{{
-          link.label
-        }}</a>
+        <a
+          [routerLink]="link.path"
+          routerLinkActive="underline"
+          (click)="toggleSidebar()"
+          >{{ link.label }}</a
+        >
       </ng-template>
     </li>
   </ul>

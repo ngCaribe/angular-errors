@@ -31,7 +31,9 @@ export class SidebarComponent {
     },
   ];
 
-  toggleNideBar() {
-    this.themeService.isNavOpen.set(!this.isNavOpen());
+  toggleSidebar() {
+    if (!this.isNavOpen()) {
+      this.themeService.isNavOpen.set(!this.isNavOpen());
+    }
   }
 }
