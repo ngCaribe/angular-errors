@@ -7,7 +7,6 @@ import { RouterLink } from '@angular/router';
   standalone: true,
   imports: [CommonModule, RouterLink],
   templateUrl: './error-card.component.html',
-  styles: [],
 })
 export class ErrorCardComponent {
   @Input({ required: true }) error: any;

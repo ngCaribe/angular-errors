@@ -82,14 +82,8 @@ export const routeMeta: RouteMeta = {
       </div>
     </section>
   `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex flex-col w-full ',
+  },
 })
 export default class PageNotFoundComponent {}

@@ -16,14 +16,10 @@ import { CommonModule } from '@angular/common';
     SidebarComponent,
   ],
   templateUrl: './app.component.html',
-  styles: [
-    `
-      :host {
-        display: flex;
-        flex-direction: column;
-      }
-    `,
-  ],
+
+  host: {
+    class: 'flex flex-col',
+  },
 })
 export class AppComponent {
   themeService = inject(GlobalSettingsService);

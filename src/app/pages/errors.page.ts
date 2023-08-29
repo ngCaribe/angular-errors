@@ -5,13 +5,8 @@ import { RouterOutlet } from '@angular/router';
   standalone: true,
   imports: [RouterOutlet],
   template: ` <router-outlet /> `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        width: 100%;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex w-full',
+  },
 })
 export default class ErrorsPageComponent {}

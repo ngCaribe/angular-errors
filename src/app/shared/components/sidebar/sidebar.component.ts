@@ -8,7 +8,6 @@ import { GlobalSettingsService } from '../../services/global-settings.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
-  styles: [],
 })
 export class SidebarComponent {
   themeService = inject(GlobalSettingsService);

@@ -32,17 +32,9 @@ export interface PostAttributes {
       </section>
     </div>
   `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        flex: 1;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex flex-col flex-1 w-full items-center',
+  },
 })
 export default class ErrorsListComponent {
   readonly content: any = injectContentFiles<PostAttributes>((contentFile) =>

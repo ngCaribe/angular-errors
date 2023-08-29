@@ -14,14 +14,9 @@ export const routeMeta: RouteMeta = {
       <h1 class="md:text-5xl text-3xl font-bold">Angular Errors</h1>
     </div>
   `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        flex: 1;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex flex-1 ',
+  },
   imports: [RouterLink],
 })
 export default class HomeComponent {}

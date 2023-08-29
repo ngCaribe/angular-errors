@@ -67,16 +67,9 @@ export const routeMeta: RouteMeta = {
       </article>
     </ng-container>
   `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-        width: 100%;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex flex-1 w-full justify-center',
+  },
 })
 export default class ErrorDetailComponent {
   readonly content$ = injectContent<PostAttributes>({
