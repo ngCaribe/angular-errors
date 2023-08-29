@@ -1,7 +1,10 @@
 import { injectContent, MarkdownComponent } from '@analogjs/content';
+import { RouteMeta } from '@analogjs/router';
 import { AsyncPipe, NgIf } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { title2Resolver } from '../../shared/resolvers/title.resolver';
+import { metatagsResolver } from '../../shared/resolvers/metatags.resolver';
 
 export interface PostAttributes {
   title: string;
@@ -9,8 +12,13 @@ export interface PostAttributes {
   description: string;
 }
 
+export const routeMeta: RouteMeta = {
+  title: title2Resolver,
+  meta: metatagsResolver,
+};
+
 @Component({
-  selector: 'app-error',
+  selector: 'app-error-detail',
   standalone: true,
   imports: [MarkdownComponent, AsyncPipe, NgIf, RouterLink],
   template: `
@@ -59,18 +67,11 @@ export interface PostAttributes {
       </article>
     </ng-container>
   `,
-  styles: [
-    `
-      :host {
-        display: flex;
-        justify-content: center;
-        flex: 1;
-        width: 100%;
-      }
-    `,
-  ],
+  host: {
+    class: 'flex flex-1 w-full justify-center',
+  },
 })
-export default class ErrorComponent {
+export default class ErrorDetailComponent {
   readonly content$ = injectContent<PostAttributes>({
     param: 'slug',
     subdirectory: 'errors',

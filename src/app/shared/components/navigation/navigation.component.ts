@@ -11,7 +11,6 @@ import {
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './navigation.component.html',
-  styles: [],
 })
 export class NavigationComponent {
   themeService = inject(GlobalSettingsService);

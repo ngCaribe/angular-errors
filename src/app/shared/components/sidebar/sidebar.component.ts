@@ -8,7 +8,6 @@ import { GlobalSettingsService } from '../../services/global-settings.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './sidebar.component.html',
-  styles: [],
 })
 export class SidebarComponent {
   themeService = inject(GlobalSettingsService);
@@ -21,9 +20,19 @@ export class SidebarComponent {
       label: 'Errors',
     },
     { path: '/errors-overview', label: 'Errors Overview' },
+    {
+      label: 'Errors List',
+      subitems: [
+        { path: '/errors-list', label: 'Errors List' },
+        { path: '/errors-list', label: 'Errors List' },
+        { path: '/errors-list', label: 'Errors List' },
+      ],
+    },
   ];
 
-  toggleNideBar() {
-    this.themeService.isNavOpen.set(!this.isNavOpen());
+  toggleSidebar() {
+    if (!this.isNavOpen()) {
+      this.themeService.isNavOpen.set(!this.isNavOpen());
+    }
   }
 }

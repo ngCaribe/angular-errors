@@ -15,7 +15,7 @@ export default defineConfig(({ mode }) => ({
   plugins: [
     analog({
       prerender: {
-        routes: ['/', '/errors', '/errors/6002', 'errors-overview'],
+        routes: ['/', '/errors', '/errors/0100'],
       },
     }),
   ],
