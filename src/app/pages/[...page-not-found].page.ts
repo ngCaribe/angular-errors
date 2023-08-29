@@ -43,7 +43,7 @@ export const routeMeta: RouteMeta = {
           <div
             class="flex items-center w-full mt-6 gap-4 shrink-0 sm:w-auto flex-wrap justify-center"
           >
-            <a btn btn-primary routerLink="/">
+            <a class="btn btn-primary" routerLink="/">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"

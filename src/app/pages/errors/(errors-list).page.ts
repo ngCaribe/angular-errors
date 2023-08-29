@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 import { injectContentFiles } from '@analogjs/content';
 import { NgFor } from '@angular/common';
-import { ErrorCardComponent } from './../../shared/components/error-card/error-card.component';
+import { ErrorCardComponent } from '../../shared/components/error-card/error-card.component';
 import { RouteMeta } from '@analogjs/router';
 
 export const routeMeta: RouteMeta = {
