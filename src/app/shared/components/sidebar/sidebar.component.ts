@@ -1,7 +1,10 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { GlobalSettingsService } from '../../services/global-settings.service';
+import {
+  GlobalSettingsService,
+  Theme,
+} from '../../services/global-settings.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,6 +13,7 @@ import { GlobalSettingsService } from '../../services/global-settings.service';
   templateUrl: './sidebar.component.html',
 })
 export class SidebarComponent {
+  THEME = Theme;
   themeService = inject(GlobalSettingsService);
   isNavOpen = this.themeService.isNavOpen;
   selectedTheme = this.themeService.selectedTheme;

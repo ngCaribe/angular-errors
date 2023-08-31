@@ -1,10 +1,14 @@
 import { Injectable, signal } from '@angular/core';
 
-export const THEMES = ['light', 'dark', 'cupcake'];
+export enum Theme {
+  LIGHT = 'light',
+  DARK = 'dark',
+}
+
 @Injectable({
   providedIn: 'root',
 })
 export class GlobalSettingsService {
-  selectedTheme = signal('light');
+  selectedTheme = signal<Theme>(Theme.LIGHT);
   isNavOpen = signal(true);
 }
