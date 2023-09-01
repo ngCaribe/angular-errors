@@ -3,6 +3,7 @@
   class="min-h-screen bg-base-100 flex justify-between flex-col"
 >
   <app-navigation />
+  <app-theme-selector class="absolute md:right-5 right-14 top-5" />
   <section class="flex flex-1">
     <app-sidebar
       [ngClass]="{ '-translate-x-full': isNavOpen() }"

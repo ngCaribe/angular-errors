@@ -1,7 +1,7 @@
 <nav class="bg-base-100 flex justify-between md:hidden h-16">
   <a class="flex items-center pl-4" routerLink="/" routerLinkActive="active">
     <img
-      *ngIf="selectedTheme() !== 'dark'; else lightThemeIcon"
+      *ngIf="selectedTheme() === THEME.LIGHT; else lightThemeIcon"
       class="w-12 pr-2"
       src="/angular_solidBlack.svg"
       alt="Angular Logo"

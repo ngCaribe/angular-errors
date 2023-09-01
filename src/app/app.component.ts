@@ -5,24 +5,25 @@ import { FooterComponent } from './shared/components/footer/footer.component';
 import { GlobalSettingsService } from './shared/services/global-settings.service';
 import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
 import { CommonModule } from '@angular/common';
+import { ThemeSelectorComponent } from './shared/components/theme-selector/theme-selector.component';
 @Component({
   selector: 'app-root',
   standalone: true,
+  templateUrl: './app.component.html',
+  host: {
+    class: 'flex flex-col',
+  },
   imports: [
     CommonModule,
     RouterOutlet,
     NavigationComponent,
     FooterComponent,
     SidebarComponent,
+    ThemeSelectorComponent,
   ],
-  templateUrl: './app.component.html',
-
-  host: {
-    class: 'flex flex-col',
-  },
 })
 export class AppComponent {
-  themeService = inject(GlobalSettingsService);
-  selectedTheme = this.themeService.selectedTheme;
-  isNavOpen = this.themeService.isNavOpen;
+  globalSettingsService = inject(GlobalSettingsService);
+  selectedTheme = this.globalSettingsService.selectedTheme;
+  isNavOpen = this.globalSettingsService.isNavOpen;
 }

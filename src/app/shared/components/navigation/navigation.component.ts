@@ -1,9 +1,9 @@
 import { Component, inject } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink, RouterLinkActive, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import {
-  THEMES,
   GlobalSettingsService,
+  Theme,
 } from '../../services/global-settings.service';
 
 @Component({
@@ -13,16 +13,12 @@ import {
   templateUrl: './navigation.component.html',
 })
 export class NavigationComponent {
-  themeService = inject(GlobalSettingsService);
-  selectedTheme = this.themeService.selectedTheme;
-  isNavOpen = this.themeService.isNavOpen;
-  themes = THEMES;
-
-  onThemeChange(event: any) {
-    this.themeService.selectedTheme.set(event?.target.value);
-  }
+  THEME = Theme;
+  globalSettingsService = inject(GlobalSettingsService);
+  selectedTheme = this.globalSettingsService.selectedTheme;
+  isNavOpen = this.globalSettingsService.isNavOpen;
 
   toggleNav() {
-    this.themeService.isNavOpen.set(!this.isNavOpen());
+    this.globalSettingsService.isNavOpen.set(!this.isNavOpen());
   }
 }
