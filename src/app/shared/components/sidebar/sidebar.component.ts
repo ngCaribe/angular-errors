@@ -23,15 +23,6 @@ export class SidebarComponent {
       path: '/errors',
       label: 'Errors',
     },
-    { path: '/errors-overview', label: 'Errors Overview' },
-    {
-      label: 'Errors List',
-      subitems: [
-        { path: '/errors-list', label: 'Errors List' },
-        { path: '/errors-list', label: 'Errors List' },
-        { path: '/errors-list', label: 'Errors List' },
-      ],
-    },
   ];
 
   toggleSidebar() {
