@@ -3,7 +3,7 @@ import { injectContentFiles } from '@analogjs/content';
 import { NgFor } from '@angular/common';
 import { ErrorCardComponent } from '../../shared/components/error-card/error-card.component';
 import { RouteMeta } from '@analogjs/router';
-import { ErrorAttributes } from 'src/app/shared/models/error-attributes';
+import { ErrorPageAttributes } from 'src/app/shared/models/error-page-attributes';
 
 export const routeMeta: RouteMeta = {
   title: 'Errors List',
@@ -31,7 +31,7 @@ export const routeMeta: RouteMeta = {
   },
 })
 export default class ErrorsListComponent {
-  readonly content: any = injectContentFiles<ErrorAttributes>((contentFile) =>
-    contentFile.filename.includes('/src/content/errors/')
+  readonly content: any = injectContentFiles<ErrorPageAttributes>(
+    (contentFile) => contentFile.filename.includes('/src/content/errors/')
   );
 }

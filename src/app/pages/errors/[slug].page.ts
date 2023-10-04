@@ -6,7 +6,7 @@ import { RouterLink } from '@angular/router';
 import { title2Resolver } from '../../shared/resolvers/title.resolver';
 import { metatagsResolver } from '../../shared/resolvers/metatags.resolver';
 import { AuthorTwitterLinkComponent } from '../../shared/components/author-twitter-link/author-twitter-link.component';
-import { ErrorAttributes } from 'src/app/shared/models/error-attributes';
+import { ErrorPageAttributes } from 'src/app/shared/models/error-page-attributes';
 
 export const routeMeta: RouteMeta = {
   title: title2Resolver,
@@ -79,7 +79,7 @@ export const routeMeta: RouteMeta = {
   ],
 })
 export default class ErrorDetailComponent {
-  readonly content$ = injectContent<ErrorAttributes>({
+  readonly content$ = injectContent<ErrorPageAttributes>({
     param: 'slug',
     subdirectory: 'errors',
   });

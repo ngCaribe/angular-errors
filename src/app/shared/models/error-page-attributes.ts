@@ -1,4 +1,4 @@
-export interface ErrorAttributes {
+export interface ErrorPageAttributes {
   title: string;
   slug: string;
   description: string;
