@@ -5,12 +5,8 @@ import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { title2Resolver } from '../../shared/resolvers/title.resolver';
 import { metatagsResolver } from '../../shared/resolvers/metatags.resolver';
-
-export interface PostAttributes {
-  title: string;
-  slug: string;
-  description: string;
-}
+import { AuthorTwitterLinkComponent } from '../../shared/components/author-twitter-link/author-twitter-link.component';
+import { ErrorAttributes } from 'src/app/shared/models/error-attributes';
 
 export const routeMeta: RouteMeta = {
   title: title2Resolver,
@@ -20,7 +16,6 @@ export const routeMeta: RouteMeta = {
 @Component({
   selector: 'app-error-detail',
   standalone: true,
-  imports: [MarkdownComponent, AsyncPipe, NgIf, RouterLink],
   template: `
     <ng-container *ngIf="content$ | async as content">
       <article
@@ -43,6 +38,11 @@ export const routeMeta: RouteMeta = {
           </svg>
           <span>Back to Errors List</span></a
         >
+
+        <ng-container *ngIf="content.attributes.authorTwitter as author">
+          <app-author [author]="author" class="flex justify-end" />
+        </ng-container>
+
         <analog-markdown
           class="markdown"
           [content]="content.content"
@@ -70,9 +70,16 @@ export const routeMeta: RouteMeta = {
   host: {
     class: 'flex flex-1 w-full justify-center',
   },
+  imports: [
+    MarkdownComponent,
+    AsyncPipe,
+    NgIf,
+    RouterLink,
+    AuthorTwitterLinkComponent,
+  ],
 })
 export default class ErrorDetailComponent {
-  readonly content$ = injectContent<PostAttributes>({
+  readonly content$ = injectContent<ErrorAttributes>({
     param: 'slug',
     subdirectory: 'errors',
   });

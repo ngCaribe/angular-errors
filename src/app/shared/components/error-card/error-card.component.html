@@ -3,6 +3,11 @@
     <h2 class="card-title border-b-2 pb-2">NG-{{ error.attributes.title }}</h2>
     <p>{{ error.attributes.description }}</p>
     <small class="font-light">Last Updated: {{ error.attributes.date }}</small>
+
+    <ng-container *ngIf="error.attributes.authorTwitter as author">
+      <app-author [author]="author" />
+    </ng-container>
+
     <div class="card-actions justify-end">
       <button [routerLink]="[error.slug]" class="btn btn-error">
         <svg
